@@ -22,6 +22,34 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--primary-bg-color);
+
   font-family: var(--primary-font-family);
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 100;
+  color: var(--headline-color);
+}
+
+.input {
+  border: none;
+  color: var(--headline-color);
+  opacity: 21%;
+  outline: none;
+  font-size: 3em;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+}
+
+/*input[type="radio"]:checked + label {
+  color: #fe4775;
+}*/
+
+input.focus {
+  color: #fe4775;
 }
