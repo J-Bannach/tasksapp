@@ -8,6 +8,7 @@
     <title>Tasks</title>
   </head>
   <body>
+    <!-- START HEADER SECTION-->
     <div class="header">
       <button class="header__burgerbutton" type="button">
         <img
@@ -18,9 +19,34 @@
       </button>
 
       <h2>Tasks</h2>
+
+      <button class="header__bellbutton" type="button">
+        <img src="./images/bell.png" alt="" />
+      </button>
     </div>
-    <button class="header__bellbutton" type="button">
-      <img src="./images/bell.png" alt="" />
-    </button>
+    <!-- ENDE HEADER SECTION-->
+
+    <!-- START MAIN SECTION-->
+    <section class="radioButtons">
+      <input type="radio" name="date" value="thisWeek" id="thisWeek" />
+      <label for="thisWeek">This week</label>
+      <input type="radio" name="date" value="tomorrow" id="tomorrow" />
+      <label for="tomorrow">Tomorrow </label>
+      <input type="radio" name="date" value="today" id="today" />
+      <label for="today">Today </label>
+    </section>
+
+    <section class="tasks">
+      <input type="checkbox" name="task" id="task1" />
+      <label for="task1">Book appointment with</label>
+      <input type="checkbox" name="task" id="task2" />
+      <label for="task2">Upload today shot on Dribble</label>
+      <input type="checkbox" name="task" id="task3" />
+      <label for="task3">Complete the Elephant Illustration</label>
+      <input type="checkbox" name="task" id="task4" />
+      <label for="task4">Buy cake for Clair's Birthday</label>
+      <input type="checkbox" name="task" id="task5" />
+      <label for="task5">Attend UX Conference with Jared</label>
+    </section>
   </body>
 </html>
