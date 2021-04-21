@@ -5,21 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <title>New Task</title>
   </head>
   <body>
     <form action="">
       <h2>Add new</h2>
       <input class="input" type="text" placeholder="Enter Task" />
       <h3>When</h3>
-      <label>Today <input type="radio" name="date" value="today" /></label>
-      <label
-        >Tomorrow <input type="radio" name="date" value="Tomorrow"
-      /></label>
-      <label
-        >Select date <input type="radio" name="date" value="selectDate"
-      /></label>
-      <input type="submit" value="Add Task" />
+      <input type="radio" name="date" value="today" id="today" />
+      <label for="today">Today </label>
+      <input type="radio" name="date" value="tomorrow" id="tomorrow" />
+      <label for="tomorrow">Tomorrow </label>
+      <input type="radio" name="date" value="selectDate" id="selectDate" />
+      <label for="selectDate">Select date </label>
+      <input type="submit" value="Add task" />
     </form>
   </body>
 </html>
