@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tasks.css" />
+    <title>Tasks</title>
+  </head>
+  <body>
+    <!-- START HEADER SECTION-->
+    <div class="header">
+      <button class="header__burgerbutton" type="button">
+        <img
+          src="./images/burger.png
+      "
+          alt=""
+        />
+      </button>
+
+      <h2>Tasks</h2>
+
+      <button class="header__bellbutton" type="button">
+        <img src="./images/bell.png" alt="" />
+      </button>
+    </div>
+    <!-- ENDE HEADER SECTION-->
+
+    <!-- START MAIN SECTION-->
+    <div class="main">
+      <section class="radioButtons">
+        <input type="radio" name="date" value="thisWeek" id="thisWeek" />
+        <label for="thisWeek">This week</label>
+        <input type="radio" name="date" value="tomorrow" id="tomorrow" />
+        <label for="tomorrow">Tomorrow </label>
+        <input type="radio" name="date" value="today" id="today" />
+        <label for="today">Today </label>
+      </section>
+
+      <div class="tasks">
+        <input type="checkbox" name="task" id="task1" />
+        <label for="task1">Book appointment with Jared</label>
+        <input type="checkbox" name="task" id="task2" />
+        <label for="task2">Upload today shot on Dribble</label>
+        <input type="checkbox" name="task" id="task3" />
+        <label for="task3">Complete the Elephant Illustration</label>
+        <input type="checkbox" name="task" id="task4" />
+        <label for="task4">Buy cake for Clair's Birthday</label>
+        <input type="checkbox" name="task" id="task5" />
+        <label for="task5">Attend UX Conference with Jared</label>
+      </div>
+
+      <!--START Plus Button-->
+      <div class="openNew">
+        <a
+          href="http://127.0.0.1:8080/new.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="./images/plus.svg" alt="" />
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
