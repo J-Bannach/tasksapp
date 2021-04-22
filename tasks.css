@@ -74,6 +74,7 @@ input[type="radio"]:checked + label {
   text-transform: uppercase;
   padding-right: 0.7em;
   padding-left: 0.7em;
+  letter-spacing: 0.1em;
 }
 
 #today,
@@ -91,15 +92,13 @@ input[type="radio"]:checked + label {
 
 .tasks {
   grid-column: 2 / 3;
-  background-color: rgba(212, 212, 212, 10);
+  background-color: rgba(212, 212, 212, 0.1);
   font-size: 1.3rem;
-  /* width: 80%; */
 }
 
 .tasks label {
   padding-bottom: 2em;
   color: var(--primary-text-color);
-  justify-items: center;
 }
 
 #task1,
@@ -112,6 +111,10 @@ input[type="radio"]:checked + label {
   color: #fe4775;
 }
 
+input[type="checkbox"]:checked + label {
+  color: var(--primary-color);
+  text-decoration: line-through;
+}
 /*Plus Button*/
 
 .openNew {
@@ -125,5 +128,5 @@ input[type="radio"]:checked + label {
 }
 
 .openNew img {
-  align-self: center;
+  justify-self: center;
 }
