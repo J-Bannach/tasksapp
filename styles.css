@@ -1,18 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
+
 :root {
   --primary-color: #fe4775;
   --secondary-color: #161060;
-  --headline-color: #393939;
   --primary-text-color: #111111;
-  --secondary-text-color: #ffffff;
+  --secondary-text-color: #fff;
+  --headline-color: #393939;
+  --inactive-text-color: #3939399d;
 
-  --primary-font-family: roboto, sans-serif;
-  --secondary-font-family: montserrat, sans-serif;
+  --primary-font-family: "Montserrat", sans-serif;
+  --secondary-font-family: "Roboto", sans-serif;
 }
 
 html {
@@ -21,69 +24,246 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--primary-font-family);
+  font-family: var(--secondary-font-family);
   height: 100vh;
 }
 
-h2 {
-  font-size: 3rem;
-  font-weight: 100;
-  color: var(--headline-color);
+/* BLOCK */
+.form {
+  position: relative;
+  height: 100%;
+  display: grid;
+  align-content: center;
+  row-gap: 3em;
+  padding: 1.5em 0 6.2em 1.5em;
 }
 
-.form {
+/* Element */
+.form__title {
+  font-size: 2.9em;
+  font-weight: normal;
+}
+
+.form__subtitle {
+  text-transform: uppercase;
+}
+
+.form__submit {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--secondary-text-color);
+  border: none;
+  font-size: 1.4em;
+  padding: 1.3em 2em;
+}
+
+.form__input {
+  border: none;
+  border-bottom: 2px solid var(--headline-color);
+  font-size: 2.8em;
+  width: 100%;
+  padding-right: 0.5em;
+}
+
+.form__input::placeholder {
+  opacity: 0.4;
+}
+
+/* BLOCK */
+.radio-group {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 1.5em;
+}
+
+/* ELEMENT */
+.radio-group__title {
+  color: var(--inactive-text-color);
+}
+
+.radio-group__input {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-group__input:checked + .radio-group__title {
+  color: var(--primary-color);
+}
+
+.radio-group__input:focus-visible + .radio-group__title {
+  outline: thin solid;
+}
+
+/* BLOCK */
+.dashboard {
   display: grid;
-  grid-template-rows: 15em 4em 8em 8em 8em;
-  position: relative;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   height: 100%;
 }
 
-.input {
+/* ELEMENT */
+.dashboard__burger-menu {
+  grid-column: 1/4;
+  justify-self: start;
+  margin: 3em;
+  margin-left: 1em;
+  background: none;
   border: none;
-  outline: none;
-  font-size: 3em;
-  border-bottom: 3px solid rgba(52, 45, 47, 0.38);
-  grid-template-rows: 5 / 6;
-  width: 100%;
 }
 
-.input::placeholder {
-  color: var(--headline-color);
-  opacity: 21%;
+.dashboard__title {
+  grid-column: 1/3;
+  font-size: 3em;
+  margin: 0;
+  margin-left: 0.3em;
+}
+
+.dashboard__notif {
+  margin-right: 1em;
+  justify-self: end;
+  align-self: center;
+  background: none;
+  border: none;
+}
+
+.dashboard__new-task {
+  grid-column: 3/4;
+  padding: 1.3em 2em;
+  background: var(--primary-color);
+  display: grid;
+  place-items: center;
+  border-top-left-radius: 0.5em;
+}
+
+/* BLOCK */
+.radio-group-selector {
+  text-transform: uppercase;
+  display: flex;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  justify-content: space-between;
+  grid-column: 1/2;
+  grid-row: span 2;
+  align-items: center;
+  padding: 4em 2em;
+  letter-spacing: 0.1em;
+}
+
+/* BLOCK */
+.checkbox-group {
+  grid-column: 2/4;
+  display: grid;
+  padding: 3em 1em;
+  font-size: 1.3em;
+  align-content: start;
+  row-gap: 3em;
+  overflow: auto;
+  height: 1fr;
+}
+
+/* ELEMENT */
+.checkbox-group__input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-group__input:checked + .checkbox-group__task {
+  text-decoration: line-through;
+  text-decoration-color: var(--primary-color);
+}
+
+/* START ISSUE8 */
+.nav-toggle {
+  grid-column: 1/2;
+  margin-left: 0.9em;
+}
+
+.nav-toggle__label span,
+.nav-toggle__label span::before {
+  position: relative;
+  display: block;
+  height: 0.3em;
+  width: 2.5em;
+  background: black;
+  margin-top: 5em;
+  margin-bottom: 4em;
+  border-radius: 0.5em;
+}
+
+.nav-toggle__label span::before {
+  position: absolute;
+  content: "";
+  bottom: 0.3em;
+  width: 1.7em;
+  background: black;
+  margin-bottom: 0.5em;
+}
+
+#main-menu {
+  background-color: #161060;
+  height: 100%;
   width: 100%;
+  position: fixed;
+  opacity: 1;
+  z-index: 10;
+  transform: scale(0, 1);
+  transform-origin: left;
+  left: 0;
+  transition: transform 550ms ease-in-out;
+  /* grid-area: 1 / 1 /  / 4; */
+  color: var(--secondary-text-color);
+}
+
+#main-menu:target {
+  background-color: #161060;
+  transform: scale(1, 1);
+  /* position: fixed; */
+}
+
+/* #main-menu a {
+  color: var(---secondary-text-color);
+  z-index: 101;
+} */
+
+#main-menu .main-menu__close {
+  position: absolute;
+  right: 0;
+  margin: 4em 2em 2em 2em;
+  font-family: var(--primary-font-family);
+  font-size: 1rem;
+}
+
+#main-menu a {
+  text-decoration: none;
+  color: var(--secondary-text-color);
 }
 
 h3 {
   text-transform: uppercase;
-  font-size: 1em;
-  letter-spacing: 0.2em;
+  margin: 4em 0 4em 2em;
+  font-family: var(--primary-font-family);
+  font-size: 1rem;
+  /* grid-row: 1 / 2; */
 }
 
-input[type="radio"]:checked + label {
-  color: var(--primary-color);
-}
-
-section {
-  display: flex;
-  justify-content: space-evenly;
-  color: var(--headline-color);
-}
-
-#today,
-#tomorrow,
-#selectDate {
-  opacity: 0;
-  position: absolute;
-}
-
-.button {
-  background-color: var(--primary-color);
-  color: var(--secondary-text-color);
+.main-menu {
+  list-style-type: none;
   font-family: var(--secondary-font-family);
-  font-size: 1.4em;
-  border: none;
-  grid-row: 5 / 6;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
+  font-size: 2rem;
+  /* grid-row: 2 / 3; */
+  letter-spacing: 0.1em;
+  font-weight: 65;
 }
+
+.footnote {
+  font-family: var(--primary-font-family);
+  font-size: 1rem;
+  list-style-type: none;
+  color: #fe4775;
+  margin-bottom: 1em;
+}
+
+/* END ISSUE8 */
