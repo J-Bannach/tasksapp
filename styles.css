@@ -204,7 +204,7 @@ body {
 }
 
 #main-menu {
-  background-color: #161060;
+  background-color: var(--secondary-color);
   height: 100%;
   width: 100%;
   position: fixed;
@@ -220,7 +220,7 @@ body {
 }
 
 #main-menu:target {
-  background-color: #161060;
+  background-color: var(--secondary-color);
   transform: scale(1, 1);
   /* position: fixed; */
 }
@@ -250,14 +250,13 @@ h3 {
   font-size: 1rem;
 }
 
-/* .main-menu {
+.main-menu {
   list-style-type: none;
-  font-family: var(--secondary-font-family);
+  /* font-family: var(--secondary-font-family); */
   font-size: 2rem;
   letter-spacing: 0.1em;
   font-weight: 65;
-  color: #fe4775;
-} */
+}
 
 ul li {
   list-style-type: none;
