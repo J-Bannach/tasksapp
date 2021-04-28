@@ -31,32 +31,26 @@ formElement.onsubmit = function (event) {
     ".radio-group__input:checked"
   );
 
-  // if (checkedDateInput && taskNameInput.value !== "") {
-  //   console.log(taskNameInput.value + " " + checkedDateInput.value);
-  // } else {
-  //   alert("Please enter task and date");
-  //   return;
-  // }
-
-  if (!taskNameInput.value) {
-    alert("Please enter task");
-  }
-  if (!checkedDateInput) {
+  if (!taskNameInput.value && !checkedDateInput) {
+    alert("Please enter task & date");
+  } else if (!taskNameInput.value) {
+    alert("Please enter task.");
+  } else if (!checkedDateInput) {
     alert("Please choose date");
+  } else {
+    const tasks = {
+      description: taskNameInput.value,
+      date: checkedDateInput.value,
+    };
+
+    const taskListJSON = localStorage.getItem("taskList");
+    const taskList = JSON.parse(taskListJSON);
+    console.log(taskList);
+
+    taskList.push(tasks);
+    console.log(taskList);
+
+    const newTaskListJSON = JSON.stringify(taskList);
+    localStorage.setItem("taskList", newTaskListJSON);
   }
-  // console.log(taskNameInput.value, checkedDateInput.value);
 };
-
-/* //// IF STATEMENT //// */
-
-// if (taskNameInput.value !== null && checkedDateInput.value !== "") {
-//   console.log(taskNameInput.value + " " + checkedDateInput.value);
-// } else {
-//   alert("Please enter task and date");
-// }
-
-// if (!checkedDateInput.value) {
-//   alert("Please enter task & date");
-// } else {
-//   console.log(taskNameInput.value, checkedDateInput.value);
-// }
