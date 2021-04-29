@@ -24,6 +24,13 @@
 const taskNameInput = document.querySelector(".form__input");
 const formElement = document.querySelector(".form");
 
+// WEITERLEITUNG
+
+function goToPage(href) {
+  location.href = href;
+}
+// WEITERLEITUNG
+
 formElement.onsubmit = function (event) {
   event.preventDefault();
   const taskNameInput = document.querySelector(".form__input");
@@ -42,9 +49,16 @@ formElement.onsubmit = function (event) {
       description: taskNameInput.value,
       date: checkedDateInput.value,
     };
+    // //////////////////////////////////////////////////////////////////
+    // Get and parse taskList; create empty array if taskList is null
+    // //////////////////////////////////////////////////////////////////
 
     const taskListJSON = localStorage.getItem("taskList");
-    const taskList = JSON.parse(taskListJSON);
+
+    let taskList = JSON.parse(taskListJSON);
+    if (taskList === null) {
+      taskList = [];
+    }
     console.log(taskList);
 
     taskList.push(tasks);
@@ -53,4 +67,6 @@ formElement.onsubmit = function (event) {
     const newTaskListJSON = JSON.stringify(taskList);
     localStorage.setItem("taskList", newTaskListJSON);
   }
+
+  goToPage("./dashboard.html");
 };
