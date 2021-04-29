@@ -19,6 +19,7 @@
 
 // const taskNameInput = document.querySelector(".radio-group__input:checked").value;
 
+//
 /* ///// FORMS //// */
 
 const taskNameInput = document.querySelector(".form__input");
@@ -30,6 +31,10 @@ function goToPage(href) {
   location.href = href;
 }
 // WEITERLEITUNG
+
+// ///////////////////////////////////////////
+// FORM ELEMENT ON SUBMIT ///////////////////
+// /////////////////////////////////////////
 
 formElement.onsubmit = function (event) {
   event.preventDefault();
