@@ -58,19 +58,24 @@ formElement.onsubmit = function (event) {
     // Get and parse taskList; create empty array if taskList is null
     // //////////////////////////////////////////////////////////////////
 
-    const taskListJSON = localStorage.getItem("taskList");
+    // const taskListJSON = localStorage.getItem("taskList");
 
-    let taskList = JSON.parse(taskListJSON);
-    if (taskList === null) {
-      taskList = [];
-    }
+    // let taskList = JSON.parse(taskListJSON);
+    // if (taskList === null) {
+    //   taskList = [];
+    // }
+    // console.log(taskList);
+
+    // taskList.push(tasks);
+    // console.log(taskList);
+
+    // const newTaskListJSON = JSON.stringify(taskList);
+    // localStorage.setItem("taskList", newTaskListJSON);
+
+    const taskList = JSON.parse(localStorage.getItem("taskList")) || [];
     console.log(taskList);
-
     taskList.push(tasks);
-    console.log(taskList);
-
-    const newTaskListJSON = JSON.stringify(taskList);
-    localStorage.setItem("taskList", newTaskListJSON);
+    localStorage.setItem("taskList", JSON.stringify(taskList));
   }
 
   goToPage("./dashboard.html");
