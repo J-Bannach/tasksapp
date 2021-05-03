@@ -53,6 +53,7 @@ formElement.onsubmit = function (event) {
     const tasks = {
       description: taskNameInput.value,
       date: checkedDateInput.value,
+      completed: false,
     };
     // //////////////////////////////////////////////////////////////////
     // Get and parse taskList; create empty array if taskList is null

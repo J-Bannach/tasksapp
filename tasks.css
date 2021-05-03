@@ -123,14 +123,15 @@ input[type="checkbox"]:checked + label {
   color: var(--primary-color);
   text-decoration: line-through;
 }
-/*Plus Button*/
 
-.openNew {
+/* PLUS BUTTON/ANCHOR ELEMENT */
+
+.dashboard__new-task {
   border: none;
   background-color: var(--primary-color);
   grid-column: 2 / 3;
-  width: 7rem;
-  height: 6rem;
+  width: 7em;
+  height: 6em;
   justify-self: end;
   border-top-left-radius: 0.5em;
   text-align: center;
